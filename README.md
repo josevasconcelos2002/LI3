@@ -20,7 +20,7 @@ $ cd nome_do_repositório
 </div>
 
 
-## Grupo _ _
+## Grupo 52
 
 - **A96060** [Ana Margarida Campos Pires](https://github.com/0801margarida) ;
 - **A96268** [Paulo Alexandre Rodrigues Ferreira](https://github.com/Pauloarf) ;
