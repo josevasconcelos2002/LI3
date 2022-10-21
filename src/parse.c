@@ -5,21 +5,21 @@
     FILE *file;
     open = fopen(file_name,"r");
     if(file_name = "user.csv"){
-        if(file == NULL) printf("O ficheiro que introduziu está vazio.\n");
+        if(file == NULL) printf("O respetivo ficheiro está vazio.\n");
     
 
         fclose(file);
         return /*users_hashtable*/;
     }
     else if(file_name = "drivers.csv"){
-        if(file == NULL) printf("O ficheiro que introduziu está vazio.\n");
+        if(file == NULL) printf("O respetivo ficheiro está vazio.\n");
     
 
         fclose(file);
         return /*drivers_hashtable*/;
     }
     else if(file_name = "rides.csv") {
-        if(file == NULL) printf("O ficheiro que introduziu está vazio.\n");
+        if(file == NULL) printf("O respetivo ficheiro está vazio.\n");
     
 
         fclose(file);
