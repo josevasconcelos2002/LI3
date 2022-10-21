@@ -1,29 +1,28 @@
 #include "parse.h"
 #include <stdio.h>
 
-/*retorna a hashtable resultante?*/ parse_users(const *char "users.csv"){
-    FILE *users;
-    users = fopen("users.csv","r");
-    if(users == NULL) printf("O ficheiro que introduziu está vazio.\n");
+/*retorna a hashtable resultante?*/ parse(const *char file_name){
+    FILE *file;
+    open = fopen(file_name,"r");
+    if(file_name = "user.csv"){
+        if(file == NULL) printf("O ficheiro que introduziu está vazio.\n");
     
 
-    fclose(users);
-}
+        fclose(file);
+        return /*users_hashtable*/;
+    }
+    else if(file_name = "drivers.csv"){
+        if(file == NULL) printf("O ficheiro que introduziu está vazio.\n");
+    
 
-/*retorna a hashtable resultante?*/ parse_drivers(const *char "drivers.csv"){
-    FILE *drivers;
-    drivers = fopen("drivers.csv","r");
-    if(drivers == NULL) printf("O ficheiro que introduziu está vazio.\n");
+        fclose(file);
+        return /*drivers_hashtable*/;
+    }
+    else if(file_name = "rides.csv") {
+        if(file == NULL) printf("O ficheiro que introduziu está vazio.\n");
+    
 
-
-    fclose(drivers);
-}
-
-/*retorna a hashtable resultante?*/ parse_drivers(const *char "drivers.csv"){
-    FILE *rides;
-    rides = fopen("rides.csv","r");
-    if(rides == NULL) printf("O ficheiro que introduziu está vazio.\n");
-
-
-    fclose(rides);
+        fclose(file);
+        return /*rides_hashtable*/;
+    }
 }
