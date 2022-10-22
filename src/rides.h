@@ -15,6 +15,7 @@ typedef struct rides{
     float score_driver;   // driver's score in this ride
     float tip;  // tip from the user = not to add to trip_value
     char *comment;  // a comment
+    struct rides *next;
 } Ride;
 
 #endif

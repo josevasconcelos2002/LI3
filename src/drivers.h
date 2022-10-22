@@ -11,6 +11,7 @@ typedef struct drivers{
     char *city; // Driver's city
     char *account_creation; // account_creation date
     char *account_status;   // active or inactive
+    struct drivers *next;
 } Driver;
 
 #endif

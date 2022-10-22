@@ -9,6 +9,7 @@ typedef struct users{
     char *account_creation; // account creation date = dd/mm/aaaa
     char *pay_method;   // payment method
     char *account_status;   // active or inactive
+    struct users *next;
 } User;
 
 #endif

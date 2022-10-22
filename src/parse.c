@@ -19,10 +19,10 @@
             User.account_creation = account_creation;
             User.pay_method = pay_method;
             User.account_status = account_status;
-            /*next user na hashtable dos users*/
+            users->next; /*next user na hashtable dos users*/
         }
         fclose(file);
-        return /*users_hashtable já preenchida*/;
+        return users_hash_table/*users_hashtable já preenchida*/;
     }
     else if(file_name = "drivers.csv"){
         int id;
@@ -39,7 +39,7 @@
             Driver.city = city;
             Driver.account_creation = account_creation;
             Driver.account_status = account_status;
-            /*next driver na hashtable dos drivers*/        
+            drivers->next; /*next driver na hashtable dos drivers*/        
         }
         fclose(file);
         return /*drivers_hashtable já preenchida*/;
@@ -62,7 +62,7 @@
             Ride.score_driver = score_driver;
             Ride.tip = tip;
             Ride.comment = comment;
-            /*next ride na hashtable das rides*/ 
+            rides->next; /*next ride na hashtable das rides*/ 
         }
         fclose(file);
         return /*rides_hashtable já preenchida*/;

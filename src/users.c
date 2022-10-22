@@ -7,10 +7,10 @@
 
 #define TABLE_SIZE  100  /*how much?*/
 
-User *hash_table[TABLE_SIZE];
+User *users_hash_table[TABLE_SIZE];
 
 void init_hash_table(){
-    for(int i = 0;i<TABLE_SIZE;i++) hash_table[i] = NULL;
+    for(int i = 0;i<TABLE_SIZE;i++) users_hash_table[i] = NULL;
 }
 
 bool valid_user(User *u){

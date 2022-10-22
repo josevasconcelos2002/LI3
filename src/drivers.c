@@ -7,10 +7,10 @@
 
 #define TABLE_SIZE 100 /*how much?*/
 
-Driver *hash_table[TABLE_SIZE];
+Driver *drivers_hash_table[TABLE_SIZE];
 
 void init_hash_table(){
-    for(int i = 0;i<TABLE_SIZE;i++) hash_table[i] = NULL;
+    for(int i = 0;i<TABLE_SIZE;i++) drivers_hash_table[i] = NULL;
 }
 
 bool valid_driver(Driver *d){
@@ -26,7 +26,7 @@ bool valid_driver(Driver *d){
 
 
 bool insert_driver(Driver *d){
-    if(valid_user(d)){
+    if(valid_driver(d)){
         /*insere, se tudo de estiver conforme o esperado*/
         /*falta inserir*/
     }
