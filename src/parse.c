@@ -1,16 +1,26 @@
 #include "parse.h"
 #include <stdio.h>
+#include "drivers.h"
+#include "users.h"
+#include "rides.h"
 
 /*retorna a hashtable resultante?*/ parse(const *char file_name){
     FILE *file;
     open = fopen(file_name,"r");
     if(file_name = "user.csv"){
-        char *user,*name,*birth_date,*account_creation, *pay_method, *account_status;
+        char *user,*name,*gender,*birth_date,*account_creation,*pay_method, *account_status;
         if(file == NULL) printf("O respetivo ficheiro está vazio.\n");
-        while((fscanf(file,"%s;%s;%s;%s;%s;%s;%s\n",&user,&name,&birth_date,&account_creation,&pay_method,&account_status))!=EOF){
+        while((fscanf(file,"%s;%s;%s;%s;%s;%s;%s\n",&user,&name,&gender,&birth_date,&account_creation,&pay_method,&account_status))!=EOF){
             /*Enquanto a leitura do ficheiro for válida , de acordo com os tipos esperados, guarda os users na hashtable*/
+            User.username = user;
+            User.name = name;
+            User.gender = gender;
+            User.birth_date = birth_date;
+            User.account_creation = account_creation;
+            User.pay_method = pay_method;
+            User.account_status = account_status;
+            /*next user na hashtable dos users*/
         }
-
         fclose(file);
         return /*users_hashtable já preenchida*/;
     }
@@ -20,17 +30,40 @@
         if(file == NULL) printf("O respetivo ficheiro está vazio.\n");
         while((fscanf(file,"%d;%s;%s;%s;%s;%s;%s\n",&id,&name,&birth_date,&gender,&car_class,&license_plate,&city,&account_creation,&account_status))!=EOF){
             /*Enquanto a leitura do ficheiro for válida , de acordo com os tipos esperados, guarda os drivers na hashtable*/
+            Driver.id = id;
+            Driver.name = name;
+            Driver.birth_date = birth_date;
+            Driver.gender = gender;
+            Driver.car_class = car_class;
+            Driver.license_plate = license_plate;
+            Driver.city = city;
+            Driver.account_creation = account_creation;
+            Driver.account_status = account_status;
+            /*next driver na hashtable dos drivers*/        
         }
-
         fclose(file);
         return /*drivers_hashtable já preenchida*/;
     }
     else if(file_name = "rides.csv") {
         int id;
-        char *date,*driver,*user,*city; distance; score_user; score_driver;tip; comment
+        float distance,score_user,score_driver,tip; /*tip = grojeta*/
+        /*de acordo com o guião, há valores com casas decimais, as variáveis são floats*/
+        char *date,*driver,*user,*city,*comment;
         if(file == NULL) printf("O respetivo ficheiro está vazio.\n");
-    
-
+        while((fscanf(file,"%d;%s;%s;%s;%s;%.3f;%.3f;%.3f;%.3f;%s\n",&id,&name,&birth_date,&gender,&car_class,&license_plate,&city,&account_creation,&account_status))!=EOF){
+            /*Enquanto a leitura do ficheiro for válida , de acordo com os tipos esperados, guarda as rides na hashtable*/
+            Ride.id = id;
+            Ride.date = date;
+            Ride.driver = driver;
+            Ride.user = user;
+            Ride.city = city;
+            Ride.distance = distance;
+            Ride.score_user = score_user;
+            Ride.score_driver = score_driver;
+            Ride.tip = tip;
+            Ride.comment = comment;
+            /*next ride na hashtable das rides*/ 
+        }
         fclose(file);
         return /*rides_hashtable já preenchida*/;
     }
