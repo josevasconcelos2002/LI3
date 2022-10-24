@@ -29,7 +29,6 @@ bool valid_ride(Ride *r){
     
 bool insert_ride(Ride *r){
     if(valid_ride(Ride *r)){
-        /*insere, se tudo de estiver conforme o esperado*/
         /*falta inserir*/        
     }
 }    

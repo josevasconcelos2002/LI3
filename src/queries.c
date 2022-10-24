@@ -1,19 +1,23 @@
 #include <stdio.h>
 #include "queries.h"
-q1(){
+
+FILE q1(FILE queries){
 
 }
-q2(){
+
+FILE q2(FILE queries){
 
 }
 
 
 queries(const *char file_name){
     FILE *queries;
-    open = fopen(queries,"r");
-    /*1º elemento da 1ª linha for = 1*/ q1(queries);
-    /*1º elemento da 2ª linha for = 2*/ q2(queries);
-    /* ... */
+    int q;
+    open = fopen(file_name,"r");
+    fscanf(queries,"%d",q);
+    if(q==1) q1(queries);
+    else if(q==2) q2(queries);
+    
 
     fclose(queries); 
 }

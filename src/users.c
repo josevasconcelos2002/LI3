@@ -24,7 +24,6 @@ bool valid_user(User *u){
     
 bool insert_user(User *u){
     if(valid_user(u) == true) {
-        /*insere, se tudo de estiver conforme o esperado*/
         /*falta inserir*/     
     }
 }  

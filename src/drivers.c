@@ -18,7 +18,7 @@ bool valid_driver(Driver *d){
     if((strcmp(d->gender,"M") && strcmp(d->gender,"F") != 0) return false;
     if(strlen(d->birth_date) != 10) return false;
     if((strlen(d->license_plate != 8) return false;
-    if((strlen(d->account_creation) || strlen(d->account_creation)) != 10) return false;
+    if(strlen(d->account_creation) != 10) return false;
     if(((strcmp(d->car_class,"basic") && strcmp(d->car_class,"green") && strcmp(d->car_class,"premium")) != 0)) return false;
     if(((strcmp(d->account_status,"active")) && strcmp(d->account_status,"inactive"))!= 0) return false; 
     else return true;
@@ -27,7 +27,6 @@ bool valid_driver(Driver *d){
 
 bool insert_driver(Driver *d){
     if(valid_driver(d)){
-        /*insere, se tudo de estiver conforme o esperado*/
         /*falta inserir*/
     }
 }
