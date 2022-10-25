@@ -7,11 +7,24 @@
 
 #define TABLE_SIZE  100  /*how much?*/
 
-User *users_hash_table[TABLE_SIZE];
 
-void init_hash_table(){
+/* Criar hash na heap ou na stack?????????????????
+
+User *init_hash_table(){
+    User *users_hash_table[TABLE_SIZE];
     for(int i = 0;i<TABLE_SIZE;i++) users_hash_table[i] = NULL;
+    return *users_hash_table;
 }
+
+User *init_hash_table2(){
+    User *users_hash_table[TABLE_SIZE];
+    for(int i = 0;i<TABLE_SIZE;i++){
+        users_hash_table[i] = malloc(sizeof(User));
+    }
+    return *users_hash_table;
+}
+*/
+
 
 bool valid_user(User *u){
     if(u == NULL) return false;
