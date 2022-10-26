@@ -12,4 +12,13 @@ typedef struct users{
     struct users *next;
 } User;
 
+void init_hash_table();
+unsigned int hash(char *username);
+void print_table_status();
+User *hash_table_lookup(char *username);
+User *hash_table_delete(char *username);
+bool valid_user(User *u);
+bool insert_user(User *u);
+
+
 #endif

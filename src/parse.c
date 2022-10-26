@@ -11,11 +11,10 @@
         User user;
         if(file == NULL) printf("O respetivo ficheiro está vazio.\n");
         while((fscanf(file,"%s;%s;%s;%s;%s;%s;%s\n",&user.username,&user.name,&user.gender,&user.birth_date,&user.account_creation,&user.pay_method,&user.account_status))!=EOF){
-            /*Enquanto a leitura do ficheiro for válida , de acordo com os tipos esperados, guarda os users na hashtable*/
-            users->next; /*next user na hashtable dos users*/
+            insert_user()
         }
         fclose(file);
-        return users_hash_table/*users_hashtable já preenchida*/;
+        return /*users_hashtable já preenchida*/;
     }
     
     
