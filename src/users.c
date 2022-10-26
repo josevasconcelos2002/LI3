@@ -7,9 +7,10 @@
 
 #define TABLE_SIZE  1000  /*how much?*/
 
+User *hash_table[TABLE_SIZE];
+
 void init_hash_table(){
-    User *users_hash_table[TABLE_SIZE];
-    for(int i = 0;i<TABLE_SIZE;i++) users_hash_table[i] = NULL;
+    for(int i = 0;i<TABLE_SIZE;i++) hash_table[i] = NULL;
 }
 
 unsigned int hash(char *username){
@@ -85,4 +86,23 @@ bool insert_user(User *u){
         return true;  
     }
     else return false;
-}  
+}
+
+void *parse(const char* file_name){
+    FILE *open = NULL;
+    open = fopen(file_name,"r");
+    User user;
+    if(open == NULL) printf("O respetivo ficheiro está vazio.\n");
+    while((fscanf(open,"%s;%s;%s;%s;%s;%s;%s\n",&user.username,&user.name,&user.gender,&user.birth_date,&user.account_creation,&user.pay_method,&user.account_status))!=EOF){
+        insert_user(&user);
+    }
+    fclose(open); /*users_hashtable já preenchida*/;
+}
+
+int main(int argv, char **argc){
+    init_hash_table();
+    print_table_status();
+
+    parse("users.csv");
+    print_table_status();
+}
