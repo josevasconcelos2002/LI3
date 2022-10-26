@@ -47,7 +47,7 @@
         /*de acordo com o guião, há valores com casas decimais, as variáveis são floats*/
         char *date,*driver,*user,*city,*comment;
         if(file == NULL) printf("O respetivo ficheiro está vazio.\n");
-        while((fscanf(file,"%d;%s;%s;%s;%s;%.3f;%.3f;%.3f;%.3f;%s\n",&id,&name,&birth_date,&gender,&car_class,&license_plate,&city,&account_creation,&account_status))!=EOF){
+        while((fscanf(file,"%d;%s;%s;%s;%s;%.3d;%.3d;%.3d;%.3d;%s\n",&id,&name,&birth_date,&gender,&car_class,&license_plate,&city,&account_creation,&account_status))!=EOF){
             /*Enquanto a leitura do ficheiro for válida , de acordo com os tipos esperados, guarda as rides na hashtable*/
             Ride.id = id;
             Ride.date = date;

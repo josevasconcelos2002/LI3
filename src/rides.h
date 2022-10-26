@@ -10,10 +10,10 @@ typedef struct rides{
     Driver *driver; // driver's ID  (rework)
     User *user; // User's username (rework)
     char *city; // ride city
-    float distance;   // ride distance
-    float score_user; // user's score in this ride
-    float score_driver;   // driver's score in this ride
-    float tip;  // tip from the user = not to add to trip_value
+    double distance;   // ride distance
+    double score_user; // user's score in this ride
+    double score_driver;   // driver's score in this ride
+    double tip;  // tip from the user = not to add to trip_value
     char *comment;  // a comment
     struct rides *next;
 } Ride;
