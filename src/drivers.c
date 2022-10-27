@@ -7,6 +7,21 @@
 
 #define TABLE_SIZE 100 /*how much?*/
 
+/*retorna a hashtable resultante?*/User *parse(const char* file_name){
+    FILE *file;
+    FILE* open = fopen(file_name,"r");
+    if(file_name = "drivers.csv"){
+        Driver d;
+        if(file == NULL) printf("O respetivo ficheiro está vazio.\n");
+        while((fscanf(file,"%d;%s;%s;%s;%s;%s;%s\n",&d.id,&d.name,&d.birth_date,&d.gender,&d.car_class,&d.license_plate,&d.city,&d.account_creation,&d.account_status))!=EOF){
+            /*Enquanto a leitura do ficheiro for válida , de acordo com os tipos esperados, guarda os drivers na hashtable*/
+            insert_driver();
+            drivers->next;      
+        }
+        fclose(file);
+        return /*users_hashtable já preenchida*/;
+    }
+
 Driver *drivers_hash_table[TABLE_SIZE];
 
 void init_hash_table(){

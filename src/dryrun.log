@@ -1,0 +1,9 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/josepedro02/LI3/src'
+gcc -Wall -Wextra -pedantic -std=c11 -c main.c
+gcc -Wall -Wextra -pedantic -std=c11 -c parse.c 
+gcc -Wall -Wextra -pedantic -std=c11 -c HashTables_for_names.c
+gcc -Wall -Wextra -pedantic -std=c11 main.o parse.o HashTables_for_names.o -o Fase1 -lm
+rm main.o parse.o HashTables_for_names.o
+make: Leaving directory '/home/josepedro02/LI3/src'
+ 

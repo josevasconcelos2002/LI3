@@ -7,6 +7,19 @@
 
 #define TABLE_SIZE  1000  /*how much?*/
 
+/*retorna a hashtable resultante?*/User *parse(const char* file_name){
+    FILE *file;
+    FILE* open = fopen(file_name,"r");
+    if(file_name = "user.csv"){
+        User user;
+        if(file == NULL) printf("O respetivo ficheiro está vazio.\n");
+        while((fscanf(file,"%s;%s;%s;%s;%s;%s;%s\n",&user.username,&user.name,&user.gender,&user.birth_date,&user.account_creation,&user.pay_method,&user.account_status))!=EOF){
+            insert_user();
+        }
+        fclose(file);
+        return /*users_hashtable já preenchida*/;
+    }
+
 User *hash_table[TABLE_SIZE];
 
 void init_hash_table(){
