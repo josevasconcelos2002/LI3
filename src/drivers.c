@@ -10,7 +10,7 @@
 /*retorna a hashtable resultante?*/User *parse(const char* file_name){
     FILE *file;
     FILE* open = fopen(file_name,"r");
-    if(file_name = "drivers.csv"){
+    if(file_name == "drivers.csv"){
         Driver d;
         if(file == NULL) printf("O respetivo ficheiro está vazio.\n");
         while((fscanf(file,"%d;%s;%s;%s;%s;%s;%s\n",&d.id,&d.name,&d.birth_date,&d.gender,&d.car_class,&d.license_plate,&d.city,&d.account_creation,&d.account_status))!=EOF){
