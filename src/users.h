@@ -1,6 +1,8 @@
 #ifndef USERS_H
 #define USERS_H
 
+#include <stdbool.h>
+
 typedef struct users{
     char *username; // user's username
     char *name; // user's name

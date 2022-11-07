@@ -16,6 +16,7 @@ void init_users_table()
     for (int i = 0; i < TABLE_SIZE; i++)
         hash_table[i] = NULL;
 }
+
 /*
 unsigned int hash(char *username)
 {

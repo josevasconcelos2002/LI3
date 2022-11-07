@@ -8,13 +8,7 @@
 
 #define TABLE_SIZE 1000 /*how much?*/
 
-User *hash_table_drivers[TABLE_SIZE];
-
-void init_drivers_table()
-{
-    for (int i = 0; i < TABLE_SIZE; i++)
-        hash_table_drivers[i] = NULL;
-}
+Driver *drivers_hash_table[TABLE_SIZE];
 
 void *parse_driver(const char *file_name)
 {
@@ -50,8 +44,6 @@ void *parse_driver(const char *file_name)
     }*/
     fclose(open); /*users_hashtable já preenchida*/;
 }
-
-Driver *drivers_hash_table[TABLE_SIZE];
 
 void init_drivers_table(){
     for(int i = 0;i<TABLE_SIZE;i++) drivers_hash_table[i] = NULL;

@@ -14,4 +14,10 @@ typedef struct drivers{
     struct drivers *next;
 } Driver;
 
+void *parse_driver(const char *file_name);
+void init_drivers_table();
+bool valid_drivers(Driver *d);
+bool insert_driver(Driver *d);
+
+
 #endif
