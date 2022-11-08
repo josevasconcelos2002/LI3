@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "drivers.h"
-#include <glib-2.0>
+#include <glib.h>
 
 #define TABLE_SIZE 1000 /*how much?*/
 
