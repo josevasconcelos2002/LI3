@@ -39,10 +39,7 @@ void *parse_driver(const char *file_name)
           }    
     }
     /*while ((fscanf(open,"%s;%s;%s;%s;%s;%s;%s\n",&u.username,&u.name,&u.gender,&u.birth_date,&u.account_creation,&u.pay_method,&u.account_status)) != EOF)
-    {
-        insert_user(&user);
-    }*/
-    fclose(open); /*users_hashtable já preenchida*/;
+    fclose(open); /*driver_hashtable já preenchida*/;
 }
 
 void init_drivers_table(){
