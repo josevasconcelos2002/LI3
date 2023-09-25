@@ -13,15 +13,25 @@ int main()
     push(&newDeque, &data3);
     pushFront(&newDeque, &data3);
     print(&newDeque);
-    void *poped = pop(&newDeque);
-    if (poped)
+    void *popedBack = pop(&newDeque);
+    void *popedFront = popFront(&newDeque);
+    if (popedBack)
     {
-        int *elementPoped = (int *)poped;
-        printf("Element %d was poped\n", *elementPoped);
+        int *elementPoped = (int *)popedBack;
+        printf("Element %d was poped from the back\n", *elementPoped);
+        print(&newDeque);
+    }
+    if (popedFront)
+    {
+        int *elementPoped = (int *)popedFront;
+        printf("Element %d was poped from the front\n", *elementPoped);
+        print(&newDeque);
     }
     if (newDeque)
     {
         print(&newDeque);
+        int dequeSize = size(&newDeque);
+        printf("\nThis Deque has now %d of size\n", dequeSize);
         free(newDeque);
     }
     else

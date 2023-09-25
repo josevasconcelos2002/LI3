@@ -1,5 +1,7 @@
 #include "deque.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
 
 Deque *create()
 {
@@ -100,6 +102,42 @@ void *pop(Deque **deque)
         result = current->data;
         free(current);
         (*deque)->size--;
+    }
+    return result;
+}
+
+void *popFront(Deque **deque)
+{
+    void *result = NULL;
+    if ((*deque) && (*deque)->size > 0)
+    {
+        Node *first = (*deque)->first;
+        (*deque)->first = first->next;
+        result = first->data;
+        free(first);
+
+        (*deque)->size--;
+    }
+    return result;
+}
+
+int size(Deque *deque)
+{
+    int size = -1;
+    if (deque)
+    {
+        size = (deque)->size;
+    }
+    return size;
+}
+
+bool isEmpty(Deque *deque)
+{
+    bool result = true;
+    if (deque)
+    {
+        if ((deque)->size > 0)
+            result = false;
     }
     return result;
 }
