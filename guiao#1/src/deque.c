@@ -10,7 +10,24 @@ Deque *create()
     return new;
 }
 
-void push(Deque *deque, void *data)
+void print(Deque **deque)
+{
+    if (*deque)
+    {
+        Node *current = (*deque)->first;
+        while (current)
+        {
+            int *element = (int *)current->data;
+            printf("%d -> ", *element);
+            current = current->next;
+        }
+        if (!current)
+            printf("X");
+        printf("\n");
+    }
+}
+
+void push(Deque **deque, void *data)
 {
     Node *newNode = malloc(sizeof(Node));
     if (newNode)
@@ -18,47 +35,71 @@ void push(Deque *deque, void *data)
         newNode->data = data;
         newNode->next = NULL;
     }
-    if (deque)
+    if (*deque)
     {
         if (newNode)
         {
-            deque->last->next = newNode;
-            deque->last = newNode;
-            deque->size++;
+            (*deque)->last->next = newNode;
+            (*deque)->last = newNode;
+            (*deque)->size++;
         }
     }
-
     else
     {
-        deque = create();
-        if (deque)
+        *deque = create();
+        if (*deque)
         {
             if (newNode)
             {
-                deque->first = newNode;
-                deque->last = newNode;
-                deque->size++;
+                (*deque)->first = newNode;
+                (*deque)->last = newNode;
+                (*deque)->size++;
             }
         }
     }
 }
 
-void pushFront(Deque *deque, void *data)
+void pushFront(Deque **deque, void *data)
 {
     Node *newNode = malloc(sizeof(Node));
     if (newNode)
     {
         newNode->data = data;
-        if (deque)
+        if (*deque)
         {
-            newNode->next = deque->first;
-            deque->first = newNode;
+            newNode->next = (*deque)->first;
+            (*deque)->first = newNode;
+            (*deque)->size++;
         }
         else
         {
-            deque = create();
-            deque->first = newNode;
+            (*deque) = create();
+            (*deque)->first = newNode;
             newNode->next = NULL;
+            (*deque)->size++;
         }
     }
+}
+
+void *pop(Deque **deque)
+{
+    void *result = NULL;
+    if (*deque && (*deque)->size > 0)
+    {
+        Node *current = (*deque)->first;
+        Node *previous = NULL;
+        while (current->next)
+        {
+            previous = current;
+            current = current->next;
+        }
+        if (previous)
+        {
+            previous->next = NULL;
+        }
+        result = current->data;
+        free(current);
+        (*deque)->size--;
+    }
+    return result;
 }
