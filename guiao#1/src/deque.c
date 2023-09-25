@@ -42,3 +42,23 @@ void push(Deque *deque, void *data)
         }
     }
 }
+
+void pushFront(Deque *deque, void *data)
+{
+    Node *newNode = malloc(sizeof(Node));
+    if (newNode)
+    {
+        newNode->data = data;
+        if (deque)
+        {
+            newNode->next = deque->first;
+            deque->first = newNode;
+        }
+        else
+        {
+            deque = create();
+            deque->first = newNode;
+            newNode->next = NULL;
+        }
+    }
+}

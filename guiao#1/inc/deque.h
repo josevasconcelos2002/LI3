@@ -12,5 +12,6 @@ typedef struct deque
 
 Deque *create();
 void push(Deque *deque, void *data);
+void pushFront(Deque *deque, void *data);
 
 #endif
